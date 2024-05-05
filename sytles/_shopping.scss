@@ -1,0 +1,45 @@
+.shopping{
+    h2{
+     text-align: center;
+     padding: 5px 2px;
+     margin: 30px;
+     font-family: "Edu SA Beginner", cursive;
+     
+    }
+    .button-area{
+        display: flex;
+        justify-content: end;
+        margin: 5px;
+        padding: 7px;
+        button{
+            background-color: rgb(219, 56, 6);
+            border: none;
+            padding: 7px 10px;
+            white-space: nowrap;
+            border-radius: 10px;
+            color: white;
+            transition: all 0.3s;
+            &:hover{
+                cursor: pointer;
+                scale: 0.95;
+                background: rgb(248, 60, 2);
+            }
+        }
+    }
+
+    ul{
+        li{
+            list-style: none;
+            padding: 5px;
+            border-bottom: 1px solid rgb(106, 105, 105);
+            font-family: "Edu SA Beginner", cursive;
+            font-weight: 600;
+            i{
+                cursor: pointer;
+                font-size: 20px;
+                font-weight: 900;
+             
+            }
+        }
+    }
+ }

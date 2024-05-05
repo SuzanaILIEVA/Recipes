@@ -1,0 +1,519 @@
+@import url("https://fonts.googleapis.com/css2?family=Borel&family=Edu+SA+Beginner:wght@400..700&family=Pacifico&display=swap");
+header {
+  display: grid;
+  grid-template-areas: "logo right right";
+  padding: 40px;
+  background: rgba(190, 190, 190, 0.5);
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+@media (max-width: 700px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    border-radius: unset;
+  }
+}
+header .logo {
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+  margin-left: 150px;
+  transition: all 0.3s;
+}
+header .logo :hover {
+  scale: 1.03;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  header .logo {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 1000px) {
+  header .logo {
+    margin: 0 auto;
+  }
+}
+header .logo img {
+  height: 100px;
+}
+header .logo a {
+  font-family: "Pacifico", cursive;
+}
+header .right {
+  grid-area: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin-right: 150px;
+}
+@media (max-width: 700px) {
+  header .right {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 550px) {
+  header .right {
+    gap: 10px;
+  }
+}
+@media (max-width: 380px) {
+  header .right {
+    gap: 5px;
+  }
+}
+header .right .search-form form {
+  display: flex;
+  background: white;
+  padding-left: 8px;
+  border-radius: 40px;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+header .right .search-form form:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+}
+header .right .search-form form input {
+  border-radius: 40px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 300px;
+  text-indent: 8px;
+}
+header .right .search-form form input::-moz-placeholder {
+  color: #7d5b03;
+}
+header .right .search-form form input::placeholder {
+  color: #7d5b03;
+}
+@media (max-width: 700px) {
+  header .right .search-form form input {
+    width: 200px;
+  }
+}
+@media (max-width: 550px) {
+  header .right .search-form form input {
+    width: 150px;
+  }
+}
+@media (max-width: 380px) {
+  header .right .search-form form input {
+    width: 75px;
+  }
+}
+header .right .search-form form button {
+  border-radius: 20px;
+  align-items: center;
+  display: flex;
+  border: none;
+  padding: 10px 30px;
+  background-color: #fab604;
+  font-size: 15px;
+  font-weight: 700;
+  gap: 5px;
+  cursor: pointer;
+  font-family: "Edu SA Beginner", cursive;
+  transition: all 0.3s;
+}
+header .right .search-form form button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 380px) {
+  header .right .search-form form button {
+    padding: 5px 15px;
+  }
+}
+header .right .likes {
+  font-size: 25px;
+  background: #fab604;
+  padding: 7px;
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 1s;
+}
+header .right .likes:hover > .list {
+  visibility: visible;
+  opacity: 1;
+}
+header .right .likes .list {
+  visibility: hidden;
+  position: absolute;
+  top: 50px;
+  right: -300px;
+  background-image: linear-gradient(90deg, #f3be3a 20%, #d09707 70%, #b08009 100%);
+  margin-right: 150px;
+  border-radius: 15px;
+  z-index: 999;
+  padding: 10px;
+  transition: all 0.4s;
+  opacity: 0;
+}
+@media (max-width: 700px) {
+  header .right .likes .list {
+    right: -170px;
+  }
+}
+header .right .likes .list a {
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  border-bottom: 1px solid black;
+  gap: 10px;
+}
+header .right .likes .list a img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+@media (max-width: 700px) {
+  header .right .likes .list a img {
+    width: 35px;
+    height: 35px;
+  }
+}
+header .right .likes .list a p {
+  white-space: nowrap;
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 10px;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 15px;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+}
+.results .result-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ebb93a;
+  padding: 5px 10px;
+  border-radius: 15px;
+  width: 100%;
+  transition: all 0.3s;
+}
+@media (max-width: 550px) {
+  .results .result-link {
+    width: 350px;
+  }
+}
+.results .result-link:hover {
+  background-color: #fab604;
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+.results .result-link img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+@media (max-width: 550px) {
+  .results .result-link img {
+    width: 30px;
+    height: 30px;
+  }
+}
+.results .result-link .data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+@media (max-width: 550px) {
+  .results .result-link .data {
+    font-size: 13px;
+  }
+}
+.results .result-link .data h4 {
+  font-family: "Borel", cursive;
+  color: #8b5d00;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+  transition: all 0.3s;
+}
+.results .result-link .data h4:hover {
+  color: rgb(85, 45, 0);
+}
+.results .result-link .data p {
+  font-family: "Pacifico", cursive;
+  white-space: nowrap;
+}
+
+.recipe {
+  background-color: rgba(190, 190, 190, 0.5);
+}
+.recipe figure {
+  height: 300px;
+  position: relative;
+}
+.recipe figure::before {
+  content: "";
+  background-image: linear-gradient(90deg, #fab604 0%, #8e6600 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+.recipe figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.recipe figure h1 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background-image: linear-gradient(90deg, #FEB818 0%, #FB961A 50%, #F8711C 100%);
+  white-space: nowrap;
+  padding: 8px 30px;
+  transform: translate(-50%, 20%) skewY(-6deg);
+  text-shadow: 0 0 10px #f2f0ec;
+  font-family: "Pacifico", cursive;
+  max-width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}
+.recipe figure .like-area {
+  display: flex;
+  justify-content: end;
+  padding: 20px;
+}
+.recipe figure .like-area i {
+  color: #c94900;
+  font-size: 25px;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.recipe figure .like-area i:hover {
+  background: #a73d01;
+}
+.recipe .ingredients {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  margin-top: 35px;
+  width: 100%;
+}
+@media (max-width: 1000px) {
+  .recipe .ingredients {
+    align-items: center;
+    padding: 20px;
+  }
+}
+.recipe .ingredients ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+@media (max-width: 550px) {
+  .recipe .ingredients ul {
+    grid-template-columns: 1fr;
+  }
+}
+.recipe .ingredients ul li {
+  display: flex;
+  gap: 10px;
+}
+.recipe .ingredients ul li i {
+  color: #a73d01;
+}
+.recipe .ingredients ul li p {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.recipe .ingredients button {
+  display: flex;
+  padding: 15px;
+  margin: 40px auto;
+  text-align: center;
+  justify-content: center;
+  width: 90%;
+  font-size: 20px;
+  gap: 10px;
+  letter-spacing: 2px;
+  border: none;
+  outline: none;
+  background-color: #d6611d;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.recipe .ingredients button:hover {
+  scale: 0.96;
+}
+@media (max-width: 700px) {
+  .recipe .ingredients button {
+    max-width: 80%;
+  }
+}
+@media (max-width: 550px) {
+  .recipe .ingredients button {
+    max-width: 70%;
+  }
+}
+.recipe .ingredients button span {
+  font-family: "Edu SA Beginner", cursive;
+  font-weight: 900;
+}
+.recipe .directions {
+  text-align: center;
+  padding-bottom: 40px;
+}
+.recipe .directions h2 {
+  font-weight: 600;
+  font-family: "Pacifico", cursive;
+  text-transform: capitalize;
+  color: #a73d01;
+  text-shadow: 0 0 10px #FB961A;
+  font-size: 30px;
+  transform: skewY(-5deg);
+  letter-spacing: 3px;
+}
+.recipe .directions p {
+  padding: 50px;
+  font-weight: 500;
+}
+.recipe .directions p span {
+  color: #a73d01;
+  font-weight: 600;
+}
+.recipe .directions a {
+  border: 2px solid #d6611d;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.recipe .directions a:hover {
+  background: #d6611d;
+}
+
+.shopping h2 {
+  text-align: center;
+  padding: 5px 2px;
+  margin: 30px;
+  font-family: "Edu SA Beginner", cursive;
+}
+.shopping .button-area {
+  display: flex;
+  justify-content: end;
+  margin: 5px;
+  padding: 7px;
+}
+.shopping .button-area button {
+  background-color: rgb(219, 56, 6);
+  border: none;
+  padding: 7px 10px;
+  white-space: nowrap;
+  border-radius: 10px;
+  color: white;
+  transition: all 0.3s;
+}
+.shopping .button-area button:hover {
+  cursor: pointer;
+  scale: 0.95;
+  background: rgb(248, 60, 2);
+}
+.shopping ul li {
+  list-style: none;
+  padding: 5px;
+  border-bottom: 1px solid rgb(106, 105, 105);
+  font-family: "Edu SA Beginner", cursive;
+  font-weight: 600;
+}
+.shopping ul li i {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html ::-webkit-scrollbar {
+  width: 10px;
+}
+html ::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: 0 0 10px orangered;
+}
+html ::-webkit-scrollbar-thumb {
+  background: #FAB604;
+  border-radius: 20px;
+}
+
+body {
+  background-image: url(/images/food-2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  background: rgba(226, 226, 226, 0.5);
+  max-width: 1440px;
+  min-height: 70vh;
+  margin: 4vw auto;
+  box-shadow: 0 0 50px rgba(104, 67, 0, 0.45);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 1000px) {
+  .container {
+    min-height: 100vh;
+    margin: auto;
+    border-radius: unset;
+  }
+}
+.container main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 100%;
+}
+@media (max-width: 1000px) {
+  .container main {
+    grid-template-columns: 1fr;
+  }
+}
+
+.loader img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 50px auto;
+}/*# sourceMappingURL=style.css.map */
